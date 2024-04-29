@@ -1,33 +1,45 @@
-NAME = push_swap
+NAME = fractol
 
-RM = rm -f
-COMPILER = clang -g -Wall -Wextra -Werror
-DIR_SRCS = source/
-DIR_INCLUDES = includes/
+SOURCE = ./source/
+
+LIBFT_A = ./libft/
+
+COMPILER = cc -Wall -Wextra -Werror
+
+MINILIBX_ARGS = -lXext -lX11 -lm
+
+GET_SOURCES = $(shell find $(SOURCE))
+
+FILTER_SOURCES = $(filter %.c, $(GET_SOURCES))
+
+OBJS = $(FILTER_SOURCES:%.c=%.o)
+
+MINILIBX_A = minilibx/libmlx.a
+
 LIBFT_A = libft/libft.a
-
-GET_SRCS = $(shell find $(DIR_SRCS))
-
-FILTER_SRCS = $(filter %.c, $(GET_SRCS))
-
-OBJS = $(FILTER_SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT_A)
-	$(COMPILER) $(OBJS) $(LIBFT_A) -o $(NAME)
-
-$(LIBFT_A):
-	cd libft && make && cd ..
+$(NAME): $(LIBFT_A) $(MINILIBX_A) $(OBJS)
+	$(COMPILER) $(OBJS) $(MINILIBX_A) $(MINILIBX_ARGS) $(LIBFT_A) -o $(NAME)
 
 .c.o:
-	$(COMPILER) -c $< -o $@ -I $(DIR_INCLUDES)
+	$(COMPILER) -c $< -o $@ -I ./includes/
+
+$(LIBFT_A):
+	cd libft/ && make && cd ..
+
+$(MINILIBX_A):
+	cd minilibx/ && make && cd ..
 
 clean:
-	$(RM) $(OBJS)
+	rm -f $(OBJS)
 	cd libft && make clean && cd ..
+	cd minilibx/ && make clean && cd ..
 
 fclean: clean
-	$(RM) $(NAME) $(LIBFT_A)
+	rm -f $(NAME) $(LIBFT_A) $(MINILIBX_A)
 
 re: fclean all
+
+.PHONY: all object clean fclean re

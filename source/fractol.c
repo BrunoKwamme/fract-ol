@@ -6,7 +6,15 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:12:32 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/04/29 17:12:34 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/04/29 18:06:20 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/fractol.h"
+
+int main()
+{
+	void	*mlx;
+
+	mlx = mlx_init();
+}
