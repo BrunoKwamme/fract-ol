@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:24:56 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/05/01 15:16:01 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/05/01 15:51:47 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_fractol
 	double		offset_x;
 	double		offset_y;
 	double		zoom;
-	char		name;
+	char		*name;
 	int			max_iterations;
 }				t_fractol;
 

@@ -6,7 +6,7 @@
 /*   By: bkwamme <bkwamme@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:12:32 by bkwamme           #+#    #+#             */
-/*   Updated: 2024/05/01 15:25:27 by bkwamme          ###   ########.fr       */
+/*   Updated: 2024/05/01 15:52:10 by bkwamme          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	draw_fractol(t_fractol *fractol, float cx, float cy)
 	}
 	else
 	{
-		print_error();
+		put_error();
 		destroy_mlx(fractol);
 		return (1);
 	}

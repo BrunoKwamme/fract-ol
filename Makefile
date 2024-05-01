@@ -4,7 +4,7 @@ SOURCE = ./source/
 
 LIBFT_A = ./libft/
 
-COMPILER = clang -g -Wall -Wextra -Werror
+COMPILER = cc -g -Wall -Wextra -Werror
 
 MINILIBX_ARGS = -lXext -lX11 -lm
 
