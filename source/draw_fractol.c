@@ -24,7 +24,6 @@ void	draw_julia(t_fractol *fractol)
 {
 	fractol->x = 0;
 	fractol->y = 0;
-
 	while (fractol->x < WIDTH)
 	{
 		while (fractol->y < HEIGHT)
@@ -48,17 +47,18 @@ void	julia_formula(t_fractol *fractol)
 	while (++i < fractol->max_iterations)
 	{
 		tmp = fractol->zx;
-		fractol->zx = fractol->zx * fractol->zx - fractol->zy * fractol->zy + fractol->cx;
+		fractol->zx = fractol->zx * fractol->zx - fractol->zy
+			* fractol->zy + fractol->cx;
 		fractol->zy = 2 * fractol->zy * tmp + fractol->cy;
-		if (fractol->zx * fractol->zy * tmp + fractol->cy * fractol->zy >= __DBL_MAX__)
-			break;
+		if (fractol->zx * fractol->zx + fractol->zy
+			* fractol->zy >= __DBL_MAX__)
+			break ;
 	}
-
 	if (i == fractol->max_iterations)
 		put_color_to_pixel(fractol, fractol->x, fractol->y, 0x000000);
 	else
 		put_color_to_pixel(fractol, fractol->x, fractol->y, (fractol->color * (i
-						% 255)));
+					% 255)));
 }
 
 void	draw_mandelbrot(t_fractol *fractol)
