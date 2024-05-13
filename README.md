@@ -17,7 +17,7 @@ Fract-ol is a 42 project that uses "minilibx" a 42 graphic lib to improve your s
 make
 ```
 
-#### fractol must receive more arguments: using "mandelbrot" or "julia"
+#### fractol must receive more arguments: "mandelbrot" or "julia" and they're navigable with the mouse-scroll and arrow-key. Pressing 'c' the color will change
 
 ## Mandelbrot example
 
