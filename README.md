@@ -14,7 +14,7 @@ Fract-ol is a 42 project that uses "minilibx" a 42 graphic lib to improve your s
 ## Compiling C archives
 
 ```
-Make
+make
 ```
 
 #### fractol must receive more arguments: using "mandelbrot" or "julia"
